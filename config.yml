@@ -1,3 +1,6 @@
+Comet:
+  COMET_PROJECT_NAME: meta-learning 
+  COMET_WORKSPACE: timchen0618
 miniImageNet:
   1shot:
     data:

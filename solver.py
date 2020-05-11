@@ -4,11 +4,16 @@ import torch.nn as nn
 from model import Model
 from data import Data_Utils
 import os
-
+import yaml
 
 class Solver():
     """docstring for Solver"""
-    def __init__(self, args, config):
+    def __init__(self, args):
+        config = yaml.load(open(args.config, 'r'), Loader=yaml.SafeLoader)
+        if not args.disable_comet:
+            self.comet_config = config['Comet']
+        config = config[args.dataset]["%dshot"%args.K]
+
         self.data_utils = Data_Utils(args, config['data'])
         self.config = config['Solver']
         self.model = Model(
@@ -17,13 +22,14 @@ class Solver():
                            args.K, 
                            not args.no_cuda
                            )
-        self.disable_comet = args.disable_comet
+        
+        
         if args.train:
             self.model_dir = os.path.join(args.model_dir, "%s_%dshot"%(args.dataset,args.K), args.exp_name)
             if not os.path.exists(self.model_dir):
                 os.makedirs(self.model_dir)
         
-        
+        self._disable_comet = args.disable_comet
         self._print_every_step = args.print_every_step
         self._valid_every_step = args.valid_every_step
         self._verbose = args.verbose
@@ -57,7 +63,7 @@ class Solver():
                                     batch['val']['input'], 
                                     batch['val']['target'],
                                     self._verbose and train,
-                                    (not self.disable_comet) and train,
+                                    (not self._disable_comet) and train,
                                     step
                                     )
         orthogonality_penalty = self.orthogonality(list(self.model.decoder.parameters())[0])
@@ -123,7 +129,7 @@ class Solver():
 
 
     def train(self):
-        if not self.disable_comet:
+        if not self._disable_comet:
             # comet logging
             hyper_params = {
                 "outer_lr": self.config['outer_lr'],
@@ -137,12 +143,10 @@ class Solver():
                 "N": self._N,
                 "K": self._K
             }
-            COMET_PROJECT_NAME='meta-learning'
-            COMET_WORKSPACE='timchen0618'
 
             self.exp = Experiment(
-                                  project_name=COMET_PROJECT_NAME,
-                                  workspace=COMET_WORKSPACE,
+                                  project_name=self.comet_config['COMET_PROJECT_NAME'],
+                                  workspace=self.comet_config['COMET_WORKSPACE'],
                                   auto_output_logging=None,
                                   auto_metric_logging=None,
                                   display_summary=False,
@@ -170,7 +174,7 @@ class Solver():
                 print('(Meta-Valid) [Step: %d/%d] Total Loss: %4.4f Valid Accuracy: %4.4f'%(step, self.config['total_steps'], val_loss.item(), val_acc.item()))
                 print('(Meta-Valid) [Step: %d/%d] KL: %4.4f Encoder Penalty: %4.4f Orthogonality Penalty: %4.4f'%(step, self.config['total_steps'], kl_div, encoder_penalty, orthogonality_penalty))
                 
-            if not self.disable_comet and step % self._print_every_step == 0:
+            if not self._disable_comet and step % self._print_every_step == 0:
                 self.exp.log_metric('Total Loss', val_loss.item(), step=step)
                 self.exp.log_metric('Valid Accuracy', val_acc.item(), step=step)
                 self.exp.log_metric('KL div', kl_div.detach().cpu().numpy(), step=step)
@@ -213,7 +217,7 @@ class Solver():
                     print('Saving checkpoint %s...'%model_name)
                     print()
 
-                if not self.disable_comet:
+                if not self._disable_comet:
                     self.exp.log_metric('Meta Valid Loss', sum(val_losses)/len(val_losses), step = step)
                     self.exp.log_metric('Meta Valid Accuracy', sum(val_accs)/len(val_accs), step = step)
 

@@ -1,6 +1,6 @@
 import argparse
 from solver import Solver
-import yaml
+
 
 def parse():
     parser = argparse.ArgumentParser(description="Pytorch-Leo")
@@ -72,10 +72,7 @@ def parse():
 
 if __name__ == '__main__':
     args = parse()
-    config = yaml.load(open(args.config, 'r'), Loader=yaml.SafeLoader)
-    config = config[args.dataset]["%dshot"%args.K]
-
-    solver = Solver(args, config)
+    solver = Solver(args)
     
     if args.train:
         solver.train()
