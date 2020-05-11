@@ -1,0 +1,108 @@
+miniImageNet:
+  1shot:
+    data:
+      batch_size: 12 
+      val_batch_size: 200
+      test_batch_size: 200
+      meta_val_steps: 15
+      embedding_size: 640
+    Solver:
+      inner_update_step: 5
+      finetuning_update_step: 5 
+      clip_value: 0.1
+      total_steps: 100000
+
+      #hyperparams
+      outer_lr: 1.0e-4
+      kl_weight: 0.001
+      encoder_penalty_weight: 1.0e-9
+      l2_penalty_weight: 1.0e-8
+      orthogonality_penalty_weight: 0.1
+    model:
+      inner_lr_init: 1
+      finetuning_lr_init: 0.001
+      dropout: 0.3
+      embedding_size: 640
+      hidden_size: 64
+
+  5shot:
+    data:
+      batch_size: 12 
+      val_batch_size: 200
+      test_batch_size: 200
+      meta_val_steps: 15
+      embedding_size: 640
+    Solver:
+      inner_update_step: 5
+      finetuning_update_step: 5 
+      clip_value: 0.1
+      total_steps: 100000
+
+      #hyperparams
+      outer_lr: 1.0e-4
+      kl_weight: 0.001
+      encoder_penalty_weight: 1.0e-9
+      l2_penalty_weight: 1.0e-8
+      orthogonality_penalty_weight: 0.1
+    model:
+      inner_lr_init: 1
+      finetuning_lr_init: 0.001
+      dropout: 0.3
+      embedding_size: 640
+      hidden_size: 64
+
+
+
+tieredImageNet:
+  1shot:
+    data:
+      batch_size: 12 
+      val_batch_size: 200
+      test_batch_size: 200
+      meta_val_steps: 15
+      embedding_size: 640
+    Solver:
+      inner_update_step: 5
+      finetuning_update_step: 5 
+      clip_value: 0.1
+      total_steps: 100000
+
+      #hyperparams
+      outer_lr: 1.0e-4
+      kl_weight: 0.001
+      encoder_penalty_weight: 1.0e-9
+      l2_penalty_weight: 1.0e-8
+      orthogonality_penalty_weight: 0.1
+    model:
+      inner_lr_init: 1
+      finetuning_lr_init: 0.001
+      dropout: 0.3
+      embedding_size: 640
+      hidden_size: 64
+
+  5shot:
+    data:
+      batch_size: 12 
+      val_batch_size: 200
+      test_batch_size: 200
+      meta_val_steps: 15
+      embedding_size: 640
+    Solver:
+      inner_update_step: 5
+      finetuning_update_step: 5 
+      clip_value: 0.1
+      total_steps: 100000
+
+      #hyperparams
+      outer_lr: 1.0e-4
+      kl_weight: 0.001
+      encoder_penalty_weight: 1.0e-9
+      l2_penalty_weight: 1.0e-8
+      orthogonality_penalty_weight: 0.1
+    model:
+      inner_lr_init: 1
+      finetuning_lr_init: 0.001
+      dropout: 0.3
+      embedding_size: 640
+      hidden_size: 64
+
