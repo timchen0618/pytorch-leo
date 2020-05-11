@@ -7,7 +7,9 @@
 
 ### Getting the data
 We borrow the embedding from deepmind/leo repo
+***
 You can download the pretrained embeddings here
+***
 or 
 `$ wget http://storage.googleapis.com/leo-embeddings/embeddings.zip`
 `$ unzip embeddings.zip`
