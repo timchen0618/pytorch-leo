@@ -13,14 +13,14 @@ or
 `$ unzip embeddings.zip`
 
 ### Run Training 
-`python3 main.py -train \
-                -verbose \
-                -N 5 \
-                -K 1 \
-                -embedding_dir ../embeddings/ \
-                -dataset miniImageNet \
-                -exp_name toy-example \
-                -save_checkpoint`
+`python3 main.py -train \`
+                `-verbose \`
+                `-N 5 \`
+                `-K 1 \`
+                `-embedding_dir ../embeddings/ \`
+                `-dataset miniImageNet \`
+                `-exp_name toy-example \`
+                `-save_checkpoint`
 where N, K means N-way K-shot training
 exp_name help you keep track of your experiment 
 for full arguments, see main.py
