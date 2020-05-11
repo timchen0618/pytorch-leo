@@ -20,7 +20,8 @@ or
                 -embedding_dir ../embeddings/ \ 
                 -dataset miniImageNet \ 
                 -exp_name toy-example \ 
-                -save_checkpoint```
+                -save_checkpoint
+```                
 where N, K means N-way K-shot training
 exp_name help you keep track of your experiment 
 for full arguments, see main.py
