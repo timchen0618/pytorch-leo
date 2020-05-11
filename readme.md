@@ -6,7 +6,7 @@
 *PyYAML==3.13
 
 ### Getting the data
-We borrow the embedding from deepmind/leo repo  
+We borrow the embedding from the [deepmind/leo repo](https://github.com/deepmind/leo)  
 You can download the pretrained embeddings here   
 or   
 `$ wget http://storage.googleapis.com/leo-embeddings/embeddings.zip`
