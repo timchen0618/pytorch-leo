@@ -13,7 +13,8 @@ or
 `$ unzip embeddings.zip`
 
 ### Run Training 
-```python3 main.py -train \ 
+```
+python3 main.py -train \ 
                 -verbose \ 
                 -N 5 \ 
                 -K 1 \ 
