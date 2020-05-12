@@ -2,8 +2,8 @@
 
 ## Running the code
 ### Prerequisites
-*torch==1.4.0
-*PyYAML==3.13
+* torch==1.4.0
+* PyYAML==3.13
 
 ### Getting the data
 We borrow the embedding from the [deepmind/leo repo](https://github.com/deepmind/leo)  
