@@ -25,9 +25,10 @@ python3 main.py -train \
                 -exp_name toy-example \ 
                 -save_checkpoint
 ```                
-where `-N`, `-K` means N-way K-shot training,  
-`-exp_name` help you keep track of your experiment,     
-`-save_checkpoint` to save model for later testing.
+where
++ `-N`, `-K` means N-way K-shot training,  
++ `-exp_name` help you keep track of your experiment,     
++ `-save_checkpoint` to save model for later testing.
 
 for full arguments, see `main.py`  
 
