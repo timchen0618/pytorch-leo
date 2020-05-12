@@ -25,8 +25,9 @@ python3 main.py -train \
                 -exp_name toy-example \ 
                 -save_checkpoint
 ```                
-where `-N`, `-K` means N-way K-shot training  
-`-exp_name` help you keep track of your experiment   
+where `-N`, `-K` means N-way K-shot training,  
+`-exp_name` help you keep track of your experiment,     
+`-save_checkpoint` to save model for later testing.
 
 for full arguments, see `main.py`  
 
@@ -45,7 +46,8 @@ This projects comes with [Comet.ml](https://www.comet.ml/site/) support. If you 
 You will need to modify the `COMET_PROJECT_NAME` and `COMET_WORKSPACE` in `config.yml` to enable monitoring.
 
 ### Hyperparameters
-You can modify the hyperparameters in `config.yml`, the hyperparameters that yield the best result in this code are as follow:
+You can modify the hyperparameters in `config.yml`.   
+The hyperparameters that yield the best result in this code are as follow:
 | Hyperparameters | miniImageNet 1-shot | miniImageNet 5-shot | tieredImageNet 1-shot | tieredImageNet 5-shot |
 |:-------------|:-------------:|:-------------:|:-------------:|:-------------:| 
 | `outer_lr` | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
