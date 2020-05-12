@@ -45,7 +45,16 @@ This projects comes with [Comet.ml](https://www.comet.ml/site/) support. If you 
 You will need to modify the `COMET_PROJECT_NAME` and `COMET_WORKSPACE` in `config.yml` to enable monitoring.
 
 ### Hyperparameters
-You can modify the hyperparameters in `config.yml`, 
+You can modify the hyperparameters in `config.yml`, the hyperparameters that yield the best result in this code are as follow:
+| Hyperparameters | miniImageNet 1-shot | miniImageNet 5-shot | tieredImageNet 1-shot | tieredImageNet 5-shot |
+|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:| 
+| `outer_lr` | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
+| `l2_penalty_weight` | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
+| `orthogonality_penalty_weight` | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
+| `dropout` | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
+| `kl_weight` | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
+| `encoder_penalty_weight` | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
+
 
 ## Result
 
