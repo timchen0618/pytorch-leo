@@ -41,7 +41,7 @@ python3 main.py -test \
 The testing result will be printed on the console.
 
 ### Monitor Training
-This projects comes with Comet.ml support. If you want to disable logging, just add `-disable_comet` as an argument.  
+This projects comes with [Comet.ml](https://www.comet.ml/site/) support. If you want to disable logging, just add `-disable_comet` as an argument.  
 You will need to modify the `COMET_PROJECT_NAME` and `COMET_WORKSPACE` in `config.yml` to enable monitoring.
 
 ### Hyperparameters
