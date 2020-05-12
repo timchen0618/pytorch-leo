@@ -30,3 +30,18 @@ where `-N`, `-K` means N-way K-shot training
 
 for full arguments, see `main.py`  
 
+### Run Testing
+```
+python3 main.py -test \
+		-N 5 \
+		-K 1 \
+		-verbose \
+    -load model_name.pth
+```
+The testing result will be printed on the console.
+
+### Monitor Training
+This projects comes with Comet.ml support. If you want to disable logging, just add `-disable_comet` as an argument.  
+You will need to modify the `COMET_PROJECT_NAME` and `COMET_WORKSPACE` in `config.yml` to enable monitoring.
+
+### Hyperparameters
