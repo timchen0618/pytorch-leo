@@ -64,6 +64,8 @@ The hyperparameters that yield the best result in this code are as follow:
 | Implementation | miniImageNet 1-shot | miniImageNet 5-shot | tieredImageNet 1-shot | tieredImageNet 5-shot |
 |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:| 
 | LEO Paper | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
-| this code | 58.91 | 76.05 | 66.70 | 81.80 |
+| this code | 59.46 ± 0.08% | 76.01 ± 0.09% | 66.62 ± 0.07% | 81.72 ± 0.09% |
 
+*The result we obtained may not be comparable since the model is trained on both the training set and validation set in the paper. 
+While our model is only trained on the training set and validated on the validation set.
 Note: This project is licensed under the terms of the MIT license.
