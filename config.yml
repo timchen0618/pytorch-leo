@@ -4,12 +4,19 @@ Comet:
 miniImageNet:
   1shot:
     data:
+      # batch_size -> the number of tasks per training episode
+      # meta_val_steps -> how many instances per task during meta-validation
+      # embedding_size -> the embedding size of pretraining feature
+      # (if you use the deepmind pretraining feature, embedding size must = 640)
       batch_size: 12 
       val_batch_size: 200
       test_batch_size: 200
       meta_val_steps: 15
       embedding_size: 640
     Solver:
+      # inner update step -> update how many gradient steps in inner loop
+      # finetuning updata step -> update how many gradient steps during finetuning
+      # clip value -> clip grad value and grad norm
       inner_update_step: 5
       finetuning_update_step: 5 
       clip_value: 0.1
@@ -17,16 +24,16 @@ miniImageNet:
 
       #hyperparams
       outer_lr: 1.0e-4
-      kl_weight: 0.001
-      encoder_penalty_weight: 1.0e-9
-      l2_penalty_weight: 1.0e-8
-      orthogonality_penalty_weight: 0.1
+      kl_weight: 0.001                     # beta in leo paper
+      encoder_penalty_weight: 1.0e-9       # gamma in leo paper
+      l2_penalty_weight: 1.0e-8            # lambda1 in leo paper
+      orthogonality_penalty_weight: 0.1    # lambda2 in leo paper
     model:
       inner_lr_init: 1
       finetuning_lr_init: 0.001
       dropout: 0.3
-      embedding_size: 640
-      hidden_size: 64
+      embedding_size: 640                  # must match embedding size in 'data'
+      hidden_size: 64                      # size of latent code(z)
 
   5shot:
     data:
