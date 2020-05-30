@@ -37,6 +37,7 @@ for full arguments, see `main.py`
 python3 main.py -test \
 		-N 5 \
 		-K 1 \
+		-dataset miniImageNet \
 		-verbose \
     		-load $(model_path) 
 ```
