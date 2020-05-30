@@ -65,3 +65,5 @@ The hyperparameters that yield the best result in this code are as follow:
 |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:| 
 | LEO Paper | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
 | this code | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
+
+# Note: This project is licensed under the terms of the MIT license.
