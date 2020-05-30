@@ -47,7 +47,7 @@ The testing result will be printed on the console.
 ### Monitor Training
 This projects comes with [Comet.ml](https://www.comet.ml/site/) support. If you want to disable logging, just add `-disable_comet` as an argument.  
 You will need to modify the `COMET_PROJECT_NAME` and `COMET_WORKSPACE` in `config.yml` to enable monitoring.
-##### *if you do not save your comet API key in .comet.config, you will have to specify API key in `line 147` in `solver.py`.
+##### *If you do not save your comet API key in `.comet.config`, you will have to specify API key in `line 147` in `solver.py`.
 ### Hyperparameters
 You can modify the hyperparameters in `config.yml`, where detailed descriptions are also provided.  
 The hyperparameters that yield the best result in this code are as follow:  
