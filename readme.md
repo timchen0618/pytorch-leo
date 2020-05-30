@@ -10,7 +10,7 @@ We borrow the embedding from the [deepmind/leo repo](https://github.com/deepmind
 You can download the pretrained embeddings [here](http://storage.googleapis.com/leo-embeddings/embeddings.zip),   
 or do   
 ```
-$ wget http://storage.googleapis.com/leo-embeddings/embeddings.zip`
+$ wget http://storage.googleapis.com/leo-embeddings/embeddings.zip
 $ unzip embeddings.zip
 ```
 
@@ -47,16 +47,16 @@ This projects comes with [Comet.ml](https://www.comet.ml/site/) support. If you 
 You will need to modify the `COMET_PROJECT_NAME` and `COMET_WORKSPACE` in `config.yml` to enable monitoring.
 
 ### Hyperparameters
-You can modify the hyperparameters in `config.yml`.   
+You can modify the hyperparameters in `config.yml`, where detailed descriptions are also provided.
 The hyperparameters that yield the best result in this code are as follow:
 | Hyperparameters | miniImageNet 1-shot | miniImageNet 5-shot | tieredImageNet 1-shot | tieredImageNet 5-shot |
 |:-------------|:-------------:|:-------------:|:-------------:|:-------------:| 
-| `outer_lr` | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
-| `l2_penalty_weight` | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
-| `orthogonality_penalty_weight` | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
-| `dropout` | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
-| `kl_weight` | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
-| `encoder_penalty_weight` | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
+| `outer_lr` | 0.0005 | 0.0006 | 0.0006 | 0.0006 |
+| `l2_penalty_weight` | 0.0001 | 8.5e-6 | 3.6e-10 | 3.6e-10 |
+| `orthogonality_penalty_weight` | 303.0 | 0.00152 | 0.188 | 0.188 |
+| `dropout` | 0.3 | 0.3 | 0.3 | 0.3 |
+| `kl_weight` | 0 | 0.001 | 0.001 | 0.001 |
+| `encoder_penalty_weight` | 1e-9 | 2.66e-7 | 5.7e-6 | 5.7e-6 |
 
 
 ## Result
@@ -64,6 +64,6 @@ The hyperparameters that yield the best result in this code are as follow:
 | Implementation | miniImageNet 1-shot | miniImageNet 5-shot | tieredImageNet 1-shot | tieredImageNet 5-shot |
 |:-------------:|:-------------:|:-------------:|:-------------:|:-------------:| 
 | LEO Paper | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
-| this code | 61.76 ± 0.08% | 77.59 ± 0.12% | 66.33 ± 0.05% | 81.44 ± 0.09% |
+| this code | 58.91 | 76.05 | 66.70 | 81.80 |
 
-##### Note: This project is licensed under the terms of the MIT license.
+Note: This project is licensed under the terms of the MIT license.
