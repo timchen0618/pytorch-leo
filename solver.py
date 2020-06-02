@@ -214,8 +214,9 @@ class Solver():
                     print('Meta Valid Loss: %4.4f \nMeta Valid Accuracy: %4.4f'%(sum(val_losses)/len(val_losses), sum(val_accs)/len(val_accs)))
                     print('=' * 50)
                     print()
-                    print('Saving checkpoint %s...'%model_name)
-                    print()
+                    if self._save_checkpoint:
+                        print('Saving checkpoint %s...'%model_name)
+                        print()
 
                 if not self._disable_comet:
                     self.exp.log_metric('Meta Valid Loss', sum(val_losses)/len(val_losses), step = step)
